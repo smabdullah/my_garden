@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,12 +8,24 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" media="all">
+	<!-- Favicon icon -->
+	<link rel="icon" type="image/png" href="{% static 'bg-image/favicon.png' %}">
     <title>{% block title%} Base html {% endblock %}</title>
   </head>
-  <body>
+  <body class = 'login-body'>
+	<div class = 'container-fluid my-3 bg-success login-opacity'>
+		<img src="{% static 'bg-image/logo.png'%}" alt="logo" id = 'logo'/>
+		<span class = 'font-weight-bold'> Your Green Garden </span>
+	</div>
+	
     {% block content %}
     {% endblock %}
+	
+	<footer id="page-footer" class = "container-fluid text-center bg-success login-opacity">
+		
+			<small>Copyright 2020 &copy; SM Abdullah</small>
+	</footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
