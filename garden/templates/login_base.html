@@ -14,17 +14,30 @@
     <title>{% block title%} Base html {% endblock %}</title>
   </head>
   <body class = 'login-body'>
-	<div class = 'container-fluid my-3 bg-success login-opacity'>
+	<div class = 'container-fluid bg-success login-opacity'>
 		<img src="{% static 'bg-image/logo.png'%}" alt="logo" id = 'logo'/>
-		<span class = 'font-weight-bold'> Your Green Garden </span>
+    <span class = 'font-weight-bold'> {% block welcome %}Your Green Garden {% endblock %}</span>
+    {% block navbar%}
+    <div class="btn-group float-right btn-success" style="margin-top: 7.5%;">
+      <button type="button" class = "login-opacity">
+        <a href = "{% url 'login'%}" style="text-decoration: none" class = "text-dark font-weight-bold">
+          Login
+        </a>
+      </button>
+      <button type="button" class = "login-opacity">
+        <a href = "{% url 'signup'%}" style="text-decoration: none" class = "text-dark font-weight-bold">
+          Signup
+        </a>
+      </button>
+    </div>
+    {% endblock %}
 	</div>
 	
     {% block content %}
     {% endblock %}
 	
 	<footer id="page-footer" class = "container-fluid text-center bg-success login-opacity">
-		
-			<small>Copyright 2020 &copy; SM Abdullah</small>
+		<small>Copyright 2020 &copy; SM Abdullah</small>
 	</footer>
 
     <!-- Optional JavaScript -->

@@ -1,17 +1,17 @@
 .login-body {
-    background: url('../bg-image/background.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
+  background: url('../bg-image/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
   }
 
 .login-opacity {
-    opacity: 0.75;
+  opacity: 0.75;
 }
 
 #logo {
-	width: 10%;
+  width: 10%;
 	height: auto;
 }
 

@@ -1,1 +1,26 @@
-<p> This page is under construction </p>
+{% extends 'login_base.html' %}
+{% block title%} Home {% endblock %}
+
+{% block welcome %}
+  {% if user_login %}
+     {{user.username}}'s Green Garden 
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
+
+{% block navbar%}
+  {% if user_login %}
+    <div class="btn-group float-right btn-success" style="margin-top: 7.5%;">
+      <button type="button" class = "login-opacity">
+        <a href = "{% url 'logout' %}" style="text-decoration: none" class = "text-dark font-weight-bold">
+          Logout
+        </a>
+      </button>
+    </div>
+  {% else %}
+    {{block.super}}
+  {% endif %}
+{% endblock %}
+
