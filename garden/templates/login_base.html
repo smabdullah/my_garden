@@ -1,49 +1,67 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" media="all">
-	<!-- Favicon icon -->
-	<link rel="icon" type="image/png" href="{% static 'bg-image/favicon.png' %}">
-    <title>{% block title%} Base html {% endblock %}</title>
-  </head>
-  <body class = 'login-body'>
-	<div class = 'container-fluid bg-success login-opacity'>
-		<img src="{% static 'bg-image/logo.png'%}" alt="logo" id = 'logo'/>
-    <span class = 'font-weight-bold'> {% block welcome %}Your Green Garden {% endblock %}</span>
-    {% block navbar%}
-    <div class="btn-group float-right btn-success" style="margin-top: 7.5%;">
-      <button type="button" class = "login-opacity">
-        <a href = "{% url 'login'%}" style="text-decoration: none" class = "text-dark font-weight-bold">
-          Login
-        </a>
-      </button>
-      <button type="button" class = "login-opacity">
-        <a href = "{% url 'signup'%}" style="text-decoration: none" class = "text-dark font-weight-bold">
-          Signup
-        </a>
-      </button>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" media="all">
+  <!-- Favicon icon -->
+  <link rel="icon" type="image/png" href="{% static 'bg-image/favicon.png' %}">
+  <title>{% block title%} Base html {% endblock %}</title>
+</head>
+
+<body class='login-body'>
+  <div class='container-fluid bg-success login-opacity'>
+    <div class='row'>
+      <div class='col-sm-8'>
+        <img src="{% static 'bg-image/logo.png'%}" alt="logo" id='logo' />
+        <span class='font-weight-bold'>
+          {% block welcome %}Your Green Garden {% endblock %}
+        </span>
+      </div>
+      <div class='col-sm-4'>
+        {% block navbar%}
+        <div class="btn-group float-right btn-success align-bottom">
+          <button type="button" class="login-opacity">
+            <a href="{% url 'login'%}" style="text-decoration: none" class="text-dark font-weight-bold">
+              Login
+            </a>
+          </button>
+          <button type="button" class="login-opacity">
+            <a href="{% url 'signup'%}" style="text-decoration: none" class="text-dark font-weight-bold">
+              Signup
+            </a>
+          </button>
+        </div>
+        {% endblock %}
+      </div>
     </div>
-    {% endblock %}
-	</div>
-	
-    {% block content %}
-    {% endblock %}
-	
-	<footer id="page-footer" class = "container-fluid text-center bg-success login-opacity">
-		<small>Copyright 2020 &copy; SM Abdullah</small>
-	</footer>
+  </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+  {% block content %}
+  {% endblock %}
+
+  <footer id="page-footer" class="container-fluid text-center bg-success login-opacity">
+    <small>Copyright 2020 &copy; SM Abdullah</small>
+  </footer>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+</body>
+
 </html>

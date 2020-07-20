@@ -2,17 +2,23 @@
 
 {% block title %}Login{% endblock %}
 {% block content %}
-	<div class = 'container login-opacity p-3'>
-		<div class = 'card'>
-			<div class = 'card-header bg-success'><h2 class = 'text-center'> Login Page </h2> </div>
-				<div class = 'card-body'>
+<div class='container login-opacity p-3'>
+	<div class='row'>
+		<div class='col-auto'>
+			<div class='card'>
+				<div class='card-header bg-success'>
+					<h2 class='text-center'> Login Page </h2>
+				</div>
+				<div class='card-body'>
 					<form method="post"> {% csrf_token %}
 						{{form.as_p}}
-						<button type="submit" class = 'btn btn-success'>Login</button>
-						<span class = 'small p-3'>Do not have an accout? Create one 
-							<a class = 'font-weight-bold' href = "{% url 'signup'%}">here</a></span>
+						<button type="submit" class='btn btn-success'>Login</button>
+						<span class='small p-3'>Do not have an accout? Create one
+							<a class='font-weight-bold' href="{% url 'signup'%}">here</a></span>
 					</form>
 				</div>
+			</div>
 		</div>
 	</div>
+</div>
 {% endblock %}
