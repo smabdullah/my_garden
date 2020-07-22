@@ -1,24 +1,31 @@
-.login-body {
-  background: url('../bg-image/background.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+body {
+  background-color: #DAAD86;
+  padding: 100px 0px 0px 0px;
   }
 
-.login-opacity {
-  opacity: 0.75;
-}
+.jumbotron {
+    background-color: #659DBD;
+  }
 
 #logo {
   width: 10%;
 	height: auto;
 }
 
-#page-footer {
-  position:fixed;
-  left:0px;
-  bottom:0px;
-  height:30px;
-  width:100%;
+.footer{
+  background-color: #FBEEC1;
+  margin:0px auto;
+  padding: 20px 0px 20px 0px;
+}
+.navbar-dark{
+  background-color: #8D8741;
+}
+
+.any-box-color {
+  background-color: #BC986A;
+}
+
+.row-header{
+  margin:0px auto;
+  padding:0px;
 }

@@ -1,26 +1,34 @@
 {% extends 'login_base.html' %}
+{% load static %}
 {% block title%} Home {% endblock %}
 
 {% block welcome %}
-  {% if user_login %}
-     {{user.username}}'s Green Garden 
-  {% else %}
-    {{ block.super }}
-  {% endif %}
+{% if user_login %}
+{{user.username}}'s Green Garden
+{% else %}
+{{ block.super }}
+{% endif %}
 {% endblock %}
 
 
 {% block navbar%}
   {% if user_login %}
-    <div class="btn-group float-right btn-success">
-      <button type="button" class = "login-opacity">
-        <a href = "{% url 'logout' %}" style="text-decoration: none" class = "text-dark font-weight-bold">
-          Logout
-        </a>
+  <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+        <span class="navbar-toggler-icon"></span>
       </button>
+      <a class="navbar-brand" href="#"><img src="{% static 'bg-image/Webp.net-resizeimage.png' %}" /></a>
+      <div class="collapse navbar-collapse" id="Navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"><a class="nav-link" href="#"><span class='fa fa-home fa-lg'></span> Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><span class='fa fa-sign-out fa-lg'></span>
+              Logout</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
   {% else %}
     {{block.super}}
   {% endif %}
 {% endblock %}
-

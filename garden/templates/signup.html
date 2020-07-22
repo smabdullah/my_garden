@@ -1,19 +1,38 @@
 {% extends 'login_base.html' %}
-
+{% load static %}
 {% block title %}Sign Up{% endblock %}
+{% block navbar %}
+  <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="{% static 'bg-image/Webp.net-resizeimage.png' %}" /></a>
+      <div class="collapse navbar-collapse" id="Navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="#"><span class='fa fa-home fa-lg'></span> Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><span class='fa fa-sign-in fa-lg'></span>
+              Login</a></li>
+          <li class="nav-item active"><a class="nav-link" href="{% url 'signup' %}"><span class='fa fa-user-plus fa-lg'></span>
+              Singup</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {% endblock %}
 
 {% block content %}
-<div class='container login-opacity p-3'>
+<div class='container p-3'>
 	<div class='row'>
-		<div class='col-auto'>
+		<div class='col col-md-6 w-50 mx-auto'>
 			<div class='card'>
-				<div class='card-header bg-success'>
+				<div class='card-header any-box-color'>
 					<h2 class='text-center'> Sign up </h2>
 				</div>
 				<div class='card-body'>
 					<form method="post"> {% csrf_token %}
 						{{form.as_p}}
-						<button type="submit" class='btn btn-success'>Sign up</button>
+						<button type="submit" class='btn any-box-color'>Sign up</button>
 						<span class='small p-3'>Already have an accout? Login
 							<a class='font-weight-bold' href="{% url 'login'%}">here</a></span>
 					</form>

@@ -8,60 +8,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}" type = 'text/css' media = 'all'>
+  <link rel="stylesheet" href="{% static 'node_modules/font-awesome/css/font-awesome.min.css' %}" type = 'text/css' media = 'all'>
   <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" media="all">
   <!-- Favicon icon -->
   <link rel="icon" type="image/png" href="{% static 'bg-image/favicon.png' %}">
   <title>{% block title%} Base html {% endblock %}</title>
 </head>
 
-<body class='login-body'>
-  <div class='container-fluid bg-success login-opacity'>
-    <div class='row'>
-      <div class='col-sm-8'>
-        <img src="{% static 'bg-image/logo.png'%}" alt="logo" id='logo' />
-        <span class='font-weight-bold'>
-          {% block welcome %}Your Green Garden {% endblock %}
-        </span>
-      </div>
-      <div class='col-sm-4'>
-        {% block navbar%}
-        <div class="btn-group float-right btn-success align-bottom">
-          <button type="button" class="login-opacity">
-            <a href="{% url 'login'%}" style="text-decoration: none" class="text-dark font-weight-bold">
-              Login
-            </a>
-          </button>
-          <button type="button" class="login-opacity">
-            <a href="{% url 'signup'%}" style="text-decoration: none" class="text-dark font-weight-bold">
-              Signup
-            </a>
-          </button>
-        </div>
-        {% endblock %}
+<body>
+  {% block navbar %}
+  <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="{% static 'bg-image/Webp.net-resizeimage.png' %}" /></a>
+      <div class="collapse navbar-collapse" id="Navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"><a class="nav-link" href="#"><span class='fa fa-home fa-lg'></span> Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><span class='fa fa-sign-in fa-lg'></span>
+              Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'signup' %}"><span class='fa fa-user-plus fa-lg'></span>
+              Singup</a></li>
+        </ul>
       </div>
     </div>
-  </div>
+  </nav>
+  {% endblock %}
+  <header class='jumbotron'>
+    <div class='container'>
+      <div class='row align-items-center row-header'>
+        <div class='col'>
+          <span class='font-weight-bold text-center'>
+            <h1>{% block welcome %}Your Green Garden {% endblock %}</h1>
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
 
   {% block content %}
   {% endblock %}
 
-  <footer id="page-footer" class="container-fluid text-center bg-success login-opacity">
-    <small>Copyright 2020 &copy; SM Abdullah</small>
+  <footer class="footer">
+    <div class='container-fluid'>
+      <div class='row align-items-center'>
+        <div class='col-12'>
+          <p class='text-center'>Copyright 2020 &copy; SM Abdullah</p>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-  </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-  </script>
+  <script src="{% static 'node_modules/jquery/dist/jquery.slim.min.js' %}"></script>
+  <script src="{% static 'node_modules/popper.js/dist/umd/popper.min.js' %}"></script>
+  <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
 </body>
 
 </html>

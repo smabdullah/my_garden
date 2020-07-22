@@ -1,0 +1,30 @@
+{
+  "name": "green-garden",
+  "version": "1.0.0",
+  "description": "Garden seed sow tracker",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smabdullah/my_garden.git"
+  },
+  "keywords": [
+    "Django",
+    "Bootstrap",
+    "font-awesome"
+  ],
+  "author": "SM Abdullah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smabdullah/my_garden/issues"
+  },
+  "homepage": "https://github.com/smabdullah/my_garden#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  }
+}
